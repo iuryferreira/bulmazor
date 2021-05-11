@@ -1,0 +1,31 @@
+<div class="container @isWidescreen @isFullHD @isMaxDesktop @isMaxWidescreen @isFluid">
+    @ChildContent
+</div>
+
+@code
+{
+    private string isWidescreen => IsWidescreen ? "is-widescreen" : "";
+    private string isFullHD => IsFullHD ? "is-fullhd" : "";
+    private string isMaxDesktop => IsMaxDesktop ? "is-max-desktop" : "";
+    private string isMaxWidescreen => IsMaxWidescreen ? "is-max-widescreen" : "";
+    private string isFluid => IsFluid ? "is-fluid" : "";
+
+
+    [Parameter]
+    public bool IsWidescreen { get; set; }
+
+    [Parameter]
+    public bool IsFullHD { get; set; }
+
+    [Parameter]
+    public bool IsMaxDesktop { get; set; }
+
+    [Parameter]
+    public bool IsMaxWidescreen { get; set; }
+
+    [Parameter]
+    public bool IsFluid { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}
